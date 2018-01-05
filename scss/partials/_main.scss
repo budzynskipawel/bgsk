@@ -3,4 +3,75 @@ body{
   @include phone{
     background-color: yellow;
   };
+
+  @include tablet{
+    background-color: aliceblue;
+  }
+};
+.border{
+  border: 2px solid yellow;
+}
+
+.clearfix::after{
+  display: block;
+  content: "";
+  clear: both;
+}
+#home{
+  background-image: url("../images/layer.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.center{
+  width: 1024px;
+  @include tablet{
+    width: 720px;
+  };
+  @include phone{
+    width: 100%;
+  }
+  margin: 0 auto;
+}
+.upper-line, .lower-line, .arrow-line{
+  display:flex;
+  justify-content: center;
+
+}
+
+.lower-line{
+  @include phone{
+    display: block;
+  }
+}
+.right-icons, .left-icons{
+  width: 48%;
+  display: flex;
+  @include phone{
+    width: 100%;
+  }
+}
+.right-icons{
+  justify-content: flex-end;
+}
+.hexagon{
+  width: 146px;
+  height: 146px;
+  @include phone{
+    width: 50%;
+    height: 50vw;
+  }
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:2px
+}
+.down-arrow{
+  width: 120px;
+  height: 120px;
+  @include phone{
+    width: 60px;
+    height: 60px;
+  }
 }
