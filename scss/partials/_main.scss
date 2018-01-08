@@ -1,13 +1,26 @@
+@font-face {
+  font-family: 'linecons';
+  src:url('../fonts/linecons.ttf');
+};
+
+@font-face {
+  font-family: 'Existence Light';
+  src:url('../fonts/existence.ttf');
+};
+
 body{
+  min-width: 300px;
   background-color: red;
-  @include phone{
+    @include phone{
     background-color: yellow;
   };
-
-  @include tablet{
+@include tablet{
     background-color: aliceblue;
   }
 };
+.violet{
+  color: $main-color;
+}
 .border{
   border: 2px solid yellow;
 }
@@ -20,8 +33,19 @@ body{
 #home{
   background-image: url("../images/layer.jpg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-}
+  width: 100%;
+
+  a:link{
+    text-decoration: none;
+    @include phone{
+      width: 49%;
+      min-height:49vw;
+          }
+  }
+};
+
 .center{
   width: 1024px;
   @include tablet{
@@ -32,46 +56,137 @@ body{
   }
   margin: 0 auto;
 }
+
+#home h1{
+    font-family: "Existence Light";
+    font-size: 4em;
+  line-height: 3em;
+  @include phone{
+    font-size: 3em;
+  };
+
+}
+
+#home h2, #home h3, #home h1{
+
+  color: white;
+  text-align: center;
+
+
+}
+
+#home h2, #home h3{
+  font-family: "Lato", sans-serif;
+font-weight: 100;
+
+}
+#home h2{
+  font-size: 2.5em;
+
+
+}
+
+#home h3{
+  font-size: 1.5em;
+    padding: 1em 0;
+
+}
 .upper-line, .lower-line, .arrow-line{
   display:flex;
   justify-content: center;
-
-}
-
-.lower-line{
   @include phone{
     display: block;
+
+  }
+
+};
+
+.upper-line{
+  width: 100%;
+  @include phone{
+    a:link{
+      display: inline-block;
+    }
+  }
+};
+
+.arrow-line{
+  @include phone{
+    display: none;
   }
 }
-.right-icons, .left-icons{
+
+
+.right-icons, .left-icons,{
   width: 48%;
   display: flex;
   @include phone{
     width: 100%;
-  }
+    }
 }
 .right-icons{
   justify-content: flex-end;
+  @include phone{
+    justify-content: flex-start;
+  }
+}
+
+.linecons{
+  padding-bottom: 0.4em;
+  font-family: "linecons";
+  font-weight: normal;
+  font-size: 3em;
+  @include phone{
+    font-size: 15vw;
+  }
+
+
 }
 .hexagon{
-  width: 146px;
-  height: 146px;
+font-size: 1em;
+font-family: "Lato", sans-serif;
+font-weight: 700;
+
+  width: 160px;
+  min-height: 160px;
   @include phone{
-    width: 50%;
-    height: 50vw;
+    width: 99%;
+    min-height: 49vw;
+    font-size: 1.2em;
   }
-  background-color: black;
+
+
+  background-image: url(../images/hex_white.svg);
+
+  &:hover{
+    background-image: url(../images/hex_violet.svg);
+
+    .linecons{
+      transition: 1s;
+      font-size: 3.5em;
+      @include phone{
+        font-size: 15vw;
+      }
+
+    }
+
+  }
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.7s;
   color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin:2px
 }
-.down-arrow{
-  width: 120px;
-  height: 120px;
-  @include phone{
-    width: 60px;
-    height: 60px;
-  }
+#down-arrow{
+
+  width: 82px;
+  min-height: 82px;
+  font-size: 2em;
+  font-weight: 100;
+
 }
