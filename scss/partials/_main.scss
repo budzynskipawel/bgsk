@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'linecons';
   src:url('../fonts/linecons.ttf');
@@ -10,18 +11,21 @@
 
 body{
   min-width: 300px;
-  background-color: red;
-    @include phone{
+  @include tablet{
+    // min-width: 720px;
+  }
+  background-color: red; //to delete
+    @include phone{ //to delete
     background-color: yellow;
   };
-@include tablet{
+@include tablet{ //to delete
     background-color: aliceblue;
   }
 };
 .violet{
   color: $main-color;
 }
-.border{
+.border{ //to delete
   border: 2px solid yellow;
 }
 
@@ -30,12 +34,16 @@ body{
   content: "";
   clear: both;
 }
+
+/* HOME */
 #home{
   background-image: url("../images/layer.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
+
+
+
 
   a:link{
     text-decoration: none;
@@ -47,19 +55,21 @@ body{
 };
 
 .center{
-  width: 1024px;
+  margin: 0 auto;
+  width: 1008px;
   @include tablet{
-    width: 720px;
+    width: 704px;
   };
   @include phone{
     width: 100%;
   }
-  margin: 0 auto;
+
 }
 
 #home h1{
-    font-family: "Existence Light";
-    font-size: 4em;
+  font-family: "Existence Light";
+  font-weight: bold;
+  font-size: 5em;
   line-height: 3em;
   @include phone{
     font-size: 3em;
@@ -77,26 +87,26 @@ body{
 
 #home h2, #home h3{
   font-family: "Lato", sans-serif;
-font-weight: 100;
+  font-weight: 100;
 
 }
 #home h2{
   font-size: 2.5em;
-
-
 }
 
 #home h3{
   font-size: 1.5em;
-    padding: 1em 0;
+  padding: 1em 0;
 
 }
 .upper-line, .lower-line, .arrow-line{
+    padding-bottom: 1.5em;
+
   display:flex;
   justify-content: center;
   @include phone{
     display: block;
-
+      padding-bottom: 0;
   }
 
 };
@@ -111,6 +121,7 @@ font-weight: 100;
 };
 
 .arrow-line{
+
   @include phone{
     display: none;
   }
@@ -167,9 +178,7 @@ font-weight: 700;
       @include phone{
         font-size: 15vw;
       }
-
     }
-
   }
   background-size: contain;
   background-repeat: no-repeat;
@@ -183,10 +192,54 @@ font-weight: 700;
   margin:2px
 }
 #down-arrow{
-
   width: 82px;
   min-height: 82px;
   font-size: 2em;
   font-weight: 100;
 
+
+}
+
+/*EO HOME*/
+
+/* MENU */
+
+#menu{
+  background-color: white;
+  color: $dark-color;
+  height: 100px;
+  .center{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+
+  }
+  li{
+    font-size: 1em;
+    font-weight: 700;
+    &:first-child{
+      display: none;
+      @include phone{
+        display: block;
+      };
+    }
+    display: inline-block;
+    @include phone{
+      display: none;
+    }
+    font-family: 'Lato', sans-serif;
+    padding-right: 1em;
+    a{
+      text-decoration: none;
+      &:visited{
+        color: $dark-color;
+      };
+          }
+  }
+  .logo{
+    font-family: 'Existence Light',sans-serif;
+    font-size: 1.5em;
+    font-weight: 900;
+  }
 }
