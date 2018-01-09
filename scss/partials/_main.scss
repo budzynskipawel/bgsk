@@ -215,19 +215,17 @@ font-weight: 700;
     align-items: center;
 
   }
-  li{
-    font-size: 1em;
-    font-weight: 700;
-    &:first-child{
-      display: none;
-      @include phone{
-        display: block;
-      };
-    }
-    display: inline-block;
+  ul{
     @include phone{
       display: none;
-    }
+    };
+  }
+  li{
+    font-size: 1em;
+    @include tablet {font-size: 0.8em;} 
+    font-weight: 700;
+    display: inline-block;
+
     font-family: 'Lato', sans-serif;
     padding-right: 1em;
     a{
@@ -243,11 +241,18 @@ font-weight: 700;
     font-weight: 900;
   }
 };
+
+
 // HAMBURGER MENU
 .hamburger{
+  display: none;
+  @include phone{
+    display: block;
+  }
   width: 33px;
   height: 22px;
   position: relative;
+  margin: 22px;
 
   input{
     display: block;
@@ -282,6 +287,7 @@ font-weight: 700;
     background: $dark-color;
     transition: 1s;
   }
+
 
 
 }
