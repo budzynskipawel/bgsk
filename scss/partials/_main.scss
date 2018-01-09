@@ -147,6 +147,7 @@ body{
   font-family: "linecons";
   font-weight: normal;
   font-size: 3em;
+  transition: 0.7s;
   @include phone{
     font-size: 15vw;
   }
@@ -157,39 +158,38 @@ body{
 font-size: 1em;
 font-family: "Lato", sans-serif;
 font-weight: 700;
-
-  width: 160px;
-  min-height: 160px;
-  @include phone{
+width: 160px;
+min-height: 160px;
+@include phone{
     width: 99%;
     min-height: 49vw;
     font-size: 1.2em;
   }
 
+background-image: url(../images/hex_white.svg);
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+transition: 0.8s;
+color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin:2px;
 
-  background-image: url(../images/hex_white.svg);
-
-  &:hover{
+&:hover{
     background-image: url(../images/hex_violet.svg);
-
+    transition: 0.7s;
     .linecons{
-      transition: 0.4s;
+      transition: 0.7s;
       font-size: 3.5em;
       @include phone{
         font-size: 15vw;
       }
     }
   }
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.7s;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin:2px
+
 }
 #down-arrow{
   width: 82px;
