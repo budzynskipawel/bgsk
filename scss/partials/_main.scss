@@ -8,9 +8,11 @@
   font-family: 'Existence Light';
   src:url('../fonts/existence.ttf');
 };
-
+html{
+  font-size: 16px;
+}
 body{
-  min-width: 300px;
+    min-width: 300px;
   @include tablet{
     // min-width: 720px;
   }
@@ -228,6 +230,10 @@ margin:2px;
     padding-right: 1em;
     a{
       text-decoration: none;
+      transition: 0.2s;
+      &:hover{
+        font-size: 1.2em;
+      }
       &:visited{
         color: $dark-color;
       };
